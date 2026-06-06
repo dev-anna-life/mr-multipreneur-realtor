@@ -12,5 +12,11 @@
   50% { transform: translateY(-10px); }
 }
 
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 .animate-fadeUp { animation: fadeUp 0.7s ease both; }
 .animate-float { animation: float 5s ease-in-out infinite; }
+.marquee-track { animation: marquee 40s linear infinite; }

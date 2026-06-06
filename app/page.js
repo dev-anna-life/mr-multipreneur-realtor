@@ -141,15 +141,7 @@ const aboutItems = [
 ]
 
 export default function Home() {
-  const [testimonialIdx, setTestimonialIdx] = useState(0)
   const [showBackTop, setShowBackTop] = useState(false)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTestimonialIdx(i => (i + 1) % testimonials.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
 
   useEffect(() => {
     const handler = () => setShowBackTop(window.scrollY > 500)
@@ -261,34 +253,21 @@ export default function Home() {
         </section>
       </Reveal>
 
-      {/* TESTIMONIALS CAROUSEL */}
+      {/* TESTIMONIALS MARQUEE */}
       <Reveal>
-        <section className="py-24 px-6 md:px-12 bg-navy">
-          <div className="max-w-4xl mx-auto text-center">
+        <section className="py-24 px-6 md:px-12 bg-navy overflow-hidden">
+          <div className="text-center mb-16">
             <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight mb-16">What My Clients Say</h2>
-            <div className="relative min-h-[220px]">
-              {testimonials.map((t, i) => (
-                <div
-                  key={i}
-                  className={`transition-all duration-500 absolute inset-0 flex flex-col items-center justify-center ${i === testimonialIdx ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8 pointer-events-none'}`}
-                >
-                  <div className="text-gold text-2xl mb-6">{'\u2605\u2605\u2605\u2605\u2605'}</div>
-                  <p className="text-cream/80 text-lg leading-relaxed max-w-2xl mb-8 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
-                  <div><div className="font-semibold text-cream">{t.name}</div><div className="text-cream/40 text-sm mt-1">{t.role}</div></div>
-                </div>
-              ))}
-            </div>
-            <div className="flex justify-center gap-3 mt-8">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setTestimonialIdx(i)}
-                  className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === testimonialIdx ? 'bg-gold w-8' : 'bg-white/20 hover:bg-white/40'}`}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">What My Clients Say</h2>
+          </div>
+          <div className="marquee-track flex gap-8 w-max">
+            {[...testimonials, ...testimonials].map((t, i) => (
+              <div key={i} className="w-[380px] bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex-shrink-0">
+                <div className="text-gold text-lg mb-4">{'\u2605\u2605\u2605\u2605\u2605'}</div>
+                <p className="text-cream/80 text-sm leading-relaxed mb-6 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
+                <div><div className="font-semibold text-cream text-sm">{t.name}</div><div className="text-cream/40 text-xs mt-0.5">{t.role}</div></div>
+              </div>
+            ))}
           </div>
         </section>
       </Reveal>
