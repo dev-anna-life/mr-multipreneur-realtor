@@ -151,11 +151,8 @@ export default function Home() {
       <section id="about" className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="w-full aspect-[4/3] bg-navy rounded-3xl flex items-center justify-center">
-              <div className="text-center p-8">
-                <div className="text-8xl mb-4">{'\u{1F3E1}'}</div>
-                <p className="text-gold font-display italic text-lg">MrMultipreneur</p>
-              </div>
+            <div className="w-full aspect-[4/3] bg-navy rounded-3xl flex items-center justify-center overflow-hidden">
+              <img src="/assets/harrison-profile.jpg" alt="Harrison Ugochukwu" className="w-full h-full object-cover" />
             </div>
           </div>
           <div>
@@ -224,13 +221,13 @@ export default function Home() {
               <p className="text-sm font-semibold text-navy">Email</p>
               <p className="text-xs text-slate mt-1">Eponixlimited@gmail.com</p>
             </div>
-            <div className="bg-white rounded-2xl p-6 border border-gray-100">
+            <a href="https://maps.google.com/maps/search/Old%20Anwai%20Rd%2C%20Asaba%2C%20Delta%2C%20Nigeria/@6.2264,6.7034,17z?hl=en" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 border border-gray-100 block hover:shadow-md transition-shadow">
               <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4">
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
               </div>
               <p className="text-sm font-semibold text-navy">Location</p>
-              <p className="text-xs text-slate mt-1">Nigeria</p>
-            </div>
+              <p className="text-xs text-slate mt-1">Old Anwai Rd, Asaba, Delta</p>
+            </a>
           </div>
           <div className="max-w-lg mx-auto bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
             <FormCard isHero={false} />
