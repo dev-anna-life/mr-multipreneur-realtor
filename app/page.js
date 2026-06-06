@@ -151,7 +151,7 @@ export default function Home() {
       <section id="about" className="py-24 px-6 md:px-12 bg-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="w-full aspect-[4/3] bg-navy rounded-3xl flex items-center justify-center overflow-hidden">
+            <div className="w-full aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden">
               <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover" />
             </div>
           </div>
