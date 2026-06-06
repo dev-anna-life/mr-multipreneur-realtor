@@ -19,4 +19,4 @@
 
 .animate-fadeUp { animation: fadeUp 0.7s ease both; }
 .animate-float { animation: float 5s ease-in-out infinite; }
-.marquee-track { animation: marquee 40s linear infinite; }
+.marquee-track { animation: marquee 40s linear infinite; animation-delay: -20s; }
