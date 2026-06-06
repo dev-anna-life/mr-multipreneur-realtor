@@ -142,6 +142,14 @@ const aboutItems = [
 
 export default function Home() {
   const [showBackTop, setShowBackTop] = useState(false)
+  const [slideIdx, setSlideIdx] = useState(0)
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setSlideIdx(i => (i + 1) % testimonials.length)
+    }, 5000)
+    return () => clearInterval(timer)
+  }, [])
 
   useEffect(() => {
     const handler = () => setShowBackTop(window.scrollY > 500)
@@ -253,21 +261,40 @@ export default function Home() {
         </section>
       </Reveal>
 
-      {/* TESTIMONIALS MARQUEE */}
+      {/* TESTIMONIALS CAROUSEL */}
       <Reveal>
         <section className="py-24 px-6 md:px-12 bg-navy overflow-hidden">
-          <div className="text-center mb-16">
-            <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">What My Clients Say</h2>
-          </div>
-          <div className="marquee-track flex gap-8 w-max">
-            {[...testimonials, ...testimonials].map((t, i) => (
-              <div key={i} className="w-[380px] bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 flex-shrink-0">
-                <div className="text-gold text-lg mb-4">{'\u2605\u2605\u2605\u2605\u2605'}</div>
-                <p className="text-cream/80 text-sm leading-relaxed mb-6 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
-                <div><div className="font-semibold text-cream text-sm">{t.name}</div><div className="text-cream/40 text-xs mt-0.5">{t.role}</div></div>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
+              <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">What My Clients Say</h2>
+            </div>
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-700 ease-in-out"
+                style={{ transform: `translateX(-${slideIdx * 100}%)` }}
+              >
+                {testimonials.map((t, i) => (
+                  <div key={i} className="min-w-full flex justify-center">
+                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 max-w-lg mx-4">
+                      <div className="text-gold text-xl mb-6">{'\u2605\u2605\u2605\u2605\u2605'}</div>
+                      <p className="text-cream/80 text-base leading-relaxed mb-8 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
+                      <div><div className="font-semibold text-cream">{t.name}</div><div className="text-cream/40 text-sm mt-1">{t.role}</div></div>
+                    </div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="flex justify-center gap-3 mt-10">
+              {testimonials.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setSlideIdx(i)}
+                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === slideIdx ? 'bg-gold w-8' : 'bg-white/20 hover:bg-white/40 w-2.5'}`}
+                  aria-label={`Go to testimonial ${i + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </section>
       </Reveal>
