@@ -21,7 +21,7 @@ export async function POST(request) {
     await transporter.sendMail({
       from: `"${name}" <${process.env.SMTP_USER}>`,
       to: process.env.EMAIL_TO,
-      subject: `New Lead from ${source || 'Website'} — ${name}`,
+      subject: `New Lead from ${source || 'Website'} - ${name}`,
       html: `
         <h2>New Lead Captured</h2>
         <table style="border-collapse:collapse;width:100%;max-width:500px">

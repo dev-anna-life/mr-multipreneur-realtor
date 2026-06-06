@@ -127,9 +127,9 @@ function FormCard({ isHero }) {
 const services = [
   { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Buying a Home', desc: 'Find your perfect property with personalized guidance through every step of the purchasing process.' },
   { icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', title: 'Selling Properties', desc: 'Maximize your property value with strategic pricing, staging, and targeted marketing campaigns.' },
-  { icon: 'M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z', title: 'Rental Services', desc: 'Reliable rental solutions for landlords and tenants &mdash; from listings to lease agreements.' },
+  { icon: 'M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z', title: 'Rental Services', desc: 'Reliable rental solutions for landlords and tenants, from listings to lease agreements.' },
   { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Real Estate Investment', desc: 'Data driven investment advice to help you build wealth through strategic property acquisitions.' },
-  { icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z', title: 'Property Development', desc: 'End to end support for development projects &mdash; from land acquisition to completed structures.' },
+  { icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z', title: 'Property Development', desc: 'End to end support for development projects, from land acquisition to completed structures.' },
   { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', title: 'Consultation', desc: 'One on one expert advice on market trends, property valuation, and investment strategy.' },
 ]
 
@@ -159,7 +159,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 bg-navy/95 backdrop-blur-md border-b border-gold/10">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-4 flex justify-between items-center">
           <a href="#" className="font-display font-black text-xl tracking-tight text-cream">
-            Harrison<span className="text-gold">.</span>
+            MrMultipreneur<span className="text-gold">.</span>
           </a>
           <div className="flex items-center gap-6">
             <a href="#services" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors">Services</a>
@@ -185,7 +185,7 @@ export default function Home() {
               Find Your<br /><span className="text-gold">Dream Home</span><br />Today
             </h1>
             <p className="text-cream/60 text-base leading-relaxed max-w-lg mb-8">
-              Expert guidance for buyers, sellers, and investors. From first time homes to luxury estates &mdash; let's make your next move your best move.
+              Expert guidance for buyers, sellers, and investors. From first time homes to luxury estates, let's make your next move your best move.
             </p>
             <div className="flex flex-wrap gap-6">
               <a href="#contact" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group">
@@ -243,7 +243,7 @@ export default function Home() {
               <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-6">Harrison Ugochukwu</h2>
               <p className="text-slate leading-relaxed mb-6">
-                With years of hands on experience in the Nigerian real estate market, I bring local expertise, market insight, and a genuine commitment to helping you find the right property. Whether you're buying your first home, selling a property, or looking to invest &mdash; I'm here to make the process smooth and successful.
+                With years of hands on experience in the Nigerian real estate market, I bring local expertise, market insight, and a genuine commitment to helping you find the right property. Whether you're buying your first home, selling a property, or looking to invest, I'm here to make the process smooth and successful.
               </p>
               <div className="space-y-4">
                 {aboutItems.map((item, i) => (
@@ -320,7 +320,7 @@ export default function Home() {
 
       <footer className="bg-navy text-cream/40 text-xs text-center py-8 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="font-display font-black text-lg text-cream mb-2">Harrison<span className="text-gold">.</span></div>
+          <div className="font-display font-black text-lg text-cream mb-2">MrMultipreneur<span className="text-gold">.</span></div>
           <p className="text-cream/30">MrMultipreneur &middot; Real Estate</p>
           <p className="mt-4 text-cream/20">Built by <span className="text-gold/60">Dev Anna</span></p>
         </div>
