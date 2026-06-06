@@ -152,7 +152,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="w-full aspect-[4/3] bg-navy rounded-3xl flex items-center justify-center overflow-hidden">
-              <img src="/assets/harrison-profile.jpg" alt="Harrison Ugochukwu" className="w-full h-full object-cover" />
+              <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover" />
             </div>
           </div>
           <div>
