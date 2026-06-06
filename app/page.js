@@ -65,6 +65,7 @@ function FormCard({ isHero }) {
       name: e.target.name.value,
       email: e.target.email.value,
       phone: e.target.phone.value,
+      message: e.target.message?.value || '',
       source: isHero ? 'Hero Form' : 'Contact Section',
     }
     try {
@@ -110,6 +111,10 @@ function FormCard({ isHero }) {
           <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone Number</label>
           <input type="tel" name="phone" required placeholder="+234 XXX XXX XXXX" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
         </div>
+        <div>
+          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Message (optional)</label>
+          <textarea name="message" placeholder="Tell me what you're looking for..." rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300 resize-y" />
+        </div>
         <button type="submit" disabled={sending} className="bg-navy text-cream py-3.5 rounded-xl font-bold text-sm hover:bg-charcoal transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
           {sending ? 'Sending...' : 'Send Message'}
         </button>
@@ -142,14 +147,6 @@ const aboutItems = [
 
 export default function Home() {
   const [showBackTop, setShowBackTop] = useState(false)
-  const [slideIdx, setSlideIdx] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setSlideIdx(i => (i + 1) % testimonials.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
 
   useEffect(() => {
     const handler = () => setShowBackTop(window.scrollY > 500)
@@ -261,43 +258,28 @@ export default function Home() {
         </section>
       </Reveal>
 
-      {/* TESTIMONIALS CAROUSEL */}
-      <Reveal>
-        <section className="py-24 px-6 md:px-12 bg-navy overflow-hidden">
-          <div className="max-w-6xl mx-auto">
+      {/* TESTIMONIALS */}
+      <section className="py-24 px-6 md:px-12 bg-navy">
+        <div className="max-w-7xl mx-auto">
+          <Reveal>
             <div className="text-center mb-16">
               <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Testimonials</p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">What My Clients Say</h2>
             </div>
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${slideIdx * 100}%)` }}
-              >
-                {testimonials.map((t, i) => (
-                  <div key={i} className="min-w-full flex justify-center">
-                    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 md:p-12 border border-white/10 max-w-lg mx-4">
-                      <div className="text-gold text-xl mb-6">{'\u2605\u2605\u2605\u2605\u2605'}</div>
-                      <p className="text-cream/80 text-base leading-relaxed mb-8 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
-                      <div><div className="font-semibold text-cream">{t.name}</div><div className="text-cream/40 text-sm mt-1">{t.role}</div></div>
-                    </div>
-                  </div>
-                ))}
+          </Reveal>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="opacity-0 translate-y-8" style={{ animation: `fadeUp 0.7s ease ${i * 0.2}s forwards` }}>
+                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full hover:-translate-y-1 hover:border-gold/30 transition-all duration-500">
+                  <div className="text-gold text-lg mb-5">{'\u2605\u2605\u2605\u2605\u2605'}</div>
+                  <p className="text-cream/80 text-sm leading-relaxed mb-6 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
+                  <div><div className="font-semibold text-cream text-sm">{t.name}</div><div className="text-cream/40 text-xs mt-0.5">{t.role}</div></div>
+                </div>
               </div>
-            </div>
-            <div className="flex justify-center gap-3 mt-10">
-              {testimonials.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setSlideIdx(i)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${i === slideIdx ? 'bg-gold w-8' : 'bg-white/20 hover:bg-white/40 w-2.5'}`}
-                  aria-label={`Go to testimonial ${i + 1}`}
-                />
-              ))}
-            </div>
+            ))}
           </div>
-        </section>
-      </Reveal>
+        </div>
+      </section>
 
       {/* CONTACT */}
       <Reveal>
