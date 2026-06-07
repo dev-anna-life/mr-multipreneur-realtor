@@ -189,7 +189,7 @@ export default function Home() {
             </p>
             <div className="flex flex-wrap gap-6">
               <a href="#contact" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group">
-                Schedule a Consultation <span className="text-lg inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
+                Book for Inspection <span className="text-lg inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
               <a href="#services" className="border border-cream/20 text-cream px-8 py-3 rounded-full font-medium text-sm hover:bg-cream/10 transition-all">
                 Explore Services
