@@ -250,10 +250,10 @@ export default function Home() {
 
       {/* WHY CHOOSE */}
       <Reveal>
-        <section id="about" className="py-24 px-6 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <section id="about" className="py-12 md:py-24 px-6 md:px-12 bg-white">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
             <div className="animate-float">
-              <div className="w-full aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
+              <div className="w-full aspect-[4/5] md:aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
                 <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
