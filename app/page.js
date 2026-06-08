@@ -257,7 +257,7 @@ export default function Home() {
                 <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
-            <div className="order-1 md:order-none space-y-6">
+            <div className="order-1 md:order-none space-y-3">
               <div>
                 <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
                 <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-3">Harrison Ugochukwu</h2>
