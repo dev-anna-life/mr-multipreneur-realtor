@@ -251,7 +251,7 @@ export default function Home() {
       {/* WHY CHOOSE */}
       <Reveal>
         <section id="about" className="py-12 md:py-24 px-6 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 md:items-center">
+          <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-2 md:gap-12 md:items-center">
             <div className="order-1">
               <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-3">Harrison Ugochukwu</h2>
