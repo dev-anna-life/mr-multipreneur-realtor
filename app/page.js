@@ -251,18 +251,20 @@ export default function Home() {
       {/* WHY CHOOSE */}
       <Reveal>
         <section id="about" className="py-12 md:py-24 px-6 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="animate-float order-2 md:order-1">
-              <div className="w-full aspect-[4/5] md:aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
-                <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
-              </div>
-            </div>
-            <div className="order-1 md:order-2">
+          <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-16 md:items-center">
+            <div className="order-1">
               <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-6">Harrison Ugochukwu</h2>
               <p className="text-slate leading-relaxed mb-6">
                 With years of hands on experience in the Nigerian real estate market, I bring local expertise, market insight, and a genuine commitment to helping you find the right property. Whether you're buying your first home, selling a property, or looking to invest, I'm here to make the process smooth and successful.
               </p>
+            </div>
+            <div className="animate-float order-2 md:order-none md:row-span-2">
+              <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] md:aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
+                <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
+              </div>
+            </div>
+            <div className="order-3">
               <div className="space-y-4">
                 {aboutItems.map((item, i) => (
                   <div key={i} className="flex items-start gap-3">
