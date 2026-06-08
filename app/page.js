@@ -252,12 +252,12 @@ export default function Home() {
       <Reveal>
         <section id="about" className="py-12 md:py-24 px-6 md:px-12 bg-white">
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-            <div className="animate-float">
+            <div className="animate-float order-2 md:order-1">
               <div className="w-full aspect-[4/5] md:aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
                 <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
               </div>
             </div>
-            <div>
+            <div className="order-1 md:order-2">
               <p className="text-gold text-xs font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
               <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-6">Harrison Ugochukwu</h2>
               <p className="text-slate leading-relaxed mb-6">
