@@ -152,6 +152,7 @@ const aboutItems = [
 
 export default function Home() {
   const [showBackTop, setShowBackTop] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const handler = () => setShowBackTop(window.scrollY > 500)
@@ -167,9 +168,21 @@ export default function Home() {
             MrMultipreneur<span className="text-gold">.</span>
           </a>
           <div className="flex items-center gap-6">
-            <a href="#services" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors">Services</a>
-            <a href="#about" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors">About</a>
-            <a href="#contact" className="bg-gold text-navy px-5 py-2 rounded-full text-sm font-bold hover:bg-gold-light transition-all">Book for Inspection</a>
+            <a href="#services" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors" onClick={() => setMenuOpen(false)}>Services</a>
+            <a href="#about" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#contact" className="hidden md:inline bg-gold text-navy px-5 py-2 rounded-full text-sm font-bold hover:bg-gold-light transition-all" onClick={() => setMenuOpen(false)}>Book for Inspection</a>
+            <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden w-8 h-8 flex flex-col items-center justify-center gap-1.5 text-cream" aria-label="Toggle menu">
+              <span className={`block w-5 h-0.5 bg-cream rounded transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-cream rounded transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block w-5 h-0.5 bg-cream rounded transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+            </button>
+          </div>
+        </div>
+        <div className={`md:hidden overflow-hidden transition-all duration-300 ${menuOpen ? 'max-h-64 opacity-100' : 'max-h-0 opacity-0'}`}>
+          <div className="px-6 pb-5 pt-2 flex flex-col gap-3 border-t border-gold/10">
+            <a href="#services" className="text-cream/70 text-sm hover:text-gold transition-colors py-2" onClick={() => setMenuOpen(false)}>Services</a>
+            <a href="#about" className="text-cream/70 text-sm hover:text-gold transition-colors py-2" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#contact" className="bg-gold text-navy px-5 py-2.5 rounded-full text-sm font-bold hover:bg-gold-light transition-all text-center" onClick={() => setMenuOpen(false)}>Book for Inspection</a>
           </div>
         </div>
       </nav>
@@ -193,7 +206,7 @@ export default function Home() {
               Expert guidance for buyers, sellers, and investors. From first time homes to luxury estates, let's make your next move your best move.
             </p>
             <div className="flex flex-wrap gap-6">
-              <a href="#contact" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group">
+              <a href="#contact" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group animate-pulseGlow">
                 Book for Inspection <span className="text-lg inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
               </a>
               <a href="#services" className="border border-cream/20 text-cream px-8 py-3 rounded-full font-medium text-sm hover:bg-cream/10 transition-all">
