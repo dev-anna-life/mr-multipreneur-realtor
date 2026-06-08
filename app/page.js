@@ -54,19 +54,20 @@ function AnimatedCounter({ target, suffix = '', decimals = 0 }) {
   return <span ref={ref}>{count.toFixed(decimals)}{suffix}</span>
 }
 
-function FormCard({ isHero }) {
+function FormCard() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
+  const [consent, setConsent] = useState(false)
 
   async function handleSubmit(e) {
     e.preventDefault()
+    if (!consent) return
     setSending(true)
     const data = {
-      name: e.target.name.value,
+      name: `${e.target.firstName.value} ${e.target.lastName.value}`,
       email: e.target.email.value,
       phone: e.target.phone.value,
-      message: e.target.message?.value || '',
-      source: isHero ? 'Hero Form' : 'Contact Section',
+      source: 'Contact Form',
     }
     try {
       await fetch('/api/contact', {
@@ -76,6 +77,7 @@ function FormCard({ isHero }) {
       })
       setSubmitted(true)
       e.target.reset()
+      setConsent(false)
       try { fbq('track', 'Lead'); } catch(e) {}
       setTimeout(() => setSubmitted(false), 5000)
     } catch {
@@ -96,32 +98,34 @@ function FormCard({ isHero }) {
   }
 
   return (
-    <div className={isHero ? 'bg-white rounded-3xl p-8 md:p-10 shadow-2xl' : ''}>
-      {isHero && <h2 className="font-display font-bold text-2xl text-navy mb-2">Interested in a property?</h2>}
-      {isHero && <p className="text-slate text-sm mb-8">Leave your details and I'll get back to you</p>}
-      <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+    <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+      <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Full Name</label>
-          <input type="text" name="name" required placeholder="Your full name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
+          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">First Name</label>
+          <input type="text" name="firstName" required placeholder="First Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
         </div>
         <div>
-          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email Address</label>
-          <input type="email" name="email" required placeholder="your@email.com" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
+          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Last Name</label>
+          <input type="text" name="lastName" required placeholder="Last Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
         </div>
-        <div>
-          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone Number</label>
-          <input type="tel" name="phone" required placeholder="+234 XXX XXX XXXX" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
-        </div>
-        <div>
-          <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Message (optional)</label>
-          <textarea name="message" placeholder="Tell me what you're looking for..." rows={4} className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300 resize-y" />
-        </div>
-        <button type="submit" disabled={sending} className="bg-navy text-cream py-3.5 rounded-xl font-bold text-sm hover:bg-charcoal transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
-          {sending ? 'Sending...' : 'Send Message'}
-        </button>
-        {isHero && <p className="text-xs text-slate/50 text-center mt-2">Your information is safe and will not be shared.</p>}
-      </form>
-    </div>
+      </div>
+      <div>
+        <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email</label>
+        <input type="email" name="email" required placeholder="Email Address" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
+      </div>
+      <div>
+        <label className="text-xs font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone/WHATSAPP</label>
+        <input type="tel" name="phone" required placeholder="Phone/WHATSAPP" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
+      </div>
+      <label className="flex items-start gap-3 cursor-pointer">
+        <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-gray-300 text-gold accent-gold" />
+        <span className="text-xs text-slate leading-relaxed">I consent to having information processed in order to receive personalised marketing material via email in accordance with the Privacy Policy.</span>
+      </label>
+      <button type="submit" disabled={sending || !consent} className="bg-navy text-cream py-3.5 rounded-xl font-bold text-sm hover:bg-charcoal transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
+        {sending ? 'Sending...' : 'Get Instant Access'}
+      </button>
+      <p className="text-xs text-slate/50 text-center mt-2">Your information is 100% safe. We never share your data.</p>
+    </form>
   )
 }
 
@@ -165,7 +169,7 @@ export default function Home() {
           <div className="flex items-center gap-6">
             <a href="#services" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors">Services</a>
             <a href="#about" className="hidden md:inline text-cream/70 text-sm hover:text-gold transition-colors">About</a>
-            <a href="#contact" className="bg-gold text-navy px-5 py-2 rounded-full text-sm font-bold hover:bg-gold-light transition-all">Get in Touch</a>
+            <a href="#contact" className="bg-gold text-navy px-5 py-2 rounded-full text-sm font-bold hover:bg-gold-light transition-all">Book for Inspection</a>
           </div>
         </div>
       </nav>
@@ -203,7 +207,7 @@ export default function Home() {
             </div>
           </div>
           <div className="animate-fadeUp" style={{ animationDelay: '0.2s' }}>
-            <FormCard isHero />
+            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"><FormCard /></div>
           </div>
         </div>
       </section>
