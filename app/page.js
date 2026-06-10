@@ -64,7 +64,7 @@ function FormCard() {
     if (!consent) return
     setSending(true)
     const data = {
-      name: `${e.target.firstName.value} ${e.target.lastName.value}`,
+      name: e.target.fullName.value,
       email: e.target.email.value,
       phone: e.target.phone.value,
       source: 'Contact Form',
@@ -99,23 +99,17 @@ function FormCard() {
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-      <div className="grid grid-cols-2 gap-4">
-        <div>
-          <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">First Name</label>
-          <input type="text" name="firstName" required placeholder="First Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
-        </div>
-        <div>
-          <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Last Name</label>
-          <input type="text" name="lastName" required placeholder="Last Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
-        </div>
+      <div>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Full Name</label>
+        <input type="text" name="fullName" required placeholder="Full Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
       <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email</label>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone Number</label>
+        <input type="tel" name="phone" required placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
+      </div>
+      <div>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email Address</label>
         <input type="email" name="email" required placeholder="Email Address" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
-      </div>
-      <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone/WHATSAPP</label>
-        <input type="tel" name="phone" required placeholder="Phone/WHATSAPP" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
       <label className="flex items-start gap-3 cursor-pointer">
         <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-gray-300 text-gold accent-gold" />
