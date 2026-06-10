@@ -111,6 +111,18 @@ function FormCard() {
         <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email Address</label>
         <input type="email" name="email" required placeholder="Email Address" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
+      <div>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Select a Budget</label>
+        <select name="budget" required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white">
+          <option value="">Select a Budget</option>
+          <option value="Under ₦2M">Under ₦2M</option>
+          <option value="₦2M - ₦5M">₦2M - ₦5M</option>
+          <option value="₦5M - ₦10M">₦5M - ₦10M</option>
+          <option value="₦10M - ₦20M">₦10M - ₦20M</option>
+          <option value="₦20M - ₦50M">₦20M - ₦50M</option>
+          <option value="₦50M+">₦50M+</option>
+        </select>
+      </div>
       <label className="flex items-start gap-3 cursor-pointer">
         <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-gray-300 text-gold accent-gold" />
         <span className="text-sm text-slate leading-relaxed">I consent to having information processed in order to receive personalised marketing material via email in accordance with the Privacy Policy.</span>
@@ -184,10 +196,11 @@ export default function Home() {
             <p className="text-cream/60 text-sm md:text-base leading-relaxed max-w-lg mb-10">
               Own a verified land in a rapidly developing corridor with flexible payment plans and exceptional appreciation potential.
             </p>
-            <div className="flex gap-8 mt-10">
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={50} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Properties Sold</div></div>
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={200} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Happy Clients</div></div>
-              <div><div className="font-display font-black text-3xl text-gold">4.9</div><div className="text-xs text-cream/50 mt-1">Client Rating</div></div>
+            <div className="flex gap-6 md:gap-8 mt-10 flex-wrap">
+              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={500} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Plot Sold</div></div>
+              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={95} suffix="%" /></div><div className="text-xs text-cream/50 mt-1">Client Satisfaction</div></div>
+              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={12} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Monthly Installment</div></div>
+              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={3} suffix={'\u00d7'} /></div><div className="text-xs text-cream/50 mt-1">Potential</div></div>
             </div>
           </div>
           <div id="book-inspection" className="animate-fadeUp scroll-mt-24" style={{ animationDelay: '0.2s' }}>
