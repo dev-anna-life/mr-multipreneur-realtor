@@ -179,10 +179,10 @@ export default function Home() {
               Trusted Real Estate Consultant
             </div>
             <h1 className="font-display font-black text-5xl md:text-7xl leading-tight text-cream mb-6">
-              Find Your<br /><span className="text-gold">Dream Home</span><br />Today
+              Build Wealth Through<br /><span className="text-gold">Strategic Real Estate</span><br />Investment
             </h1>
             <p className="text-cream/60 text-base leading-relaxed max-w-lg mb-8">
-              Expert guidance for buyers, sellers, and investors. From first time homes to luxury estates, let's make your next move your best move.
+              Own a verified land in a rapidly developing corridor with flexible payment plans and exceptional appreciation potential.
             </p>
             <div className="flex flex-wrap gap-6">
               <a href="#book-inspection" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group animate-pulseGlow">
