@@ -193,18 +193,18 @@ export default function Home() {
             <h1 className="font-display font-black text-4xl md:text-7xl leading-tight text-cream mb-8">
               Build Wealth Through<br /><span className="text-gold">Strategic Real Estate</span><br />Investment
             </h1>
-            <p className="text-cream/60 text-sm md:text-base leading-relaxed max-w-lg mb-10">
+            <p className="text-cream/60 text-sm md:text-base leading-relaxed max-w-lg">
               Own a verified land in a rapidly developing corridor with flexible payment plans and exceptional appreciation potential.
             </p>
-            <div className="flex gap-6 md:gap-8 mt-10 flex-wrap">
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={500} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Plot Sold</div></div>
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={95} suffix="%" /></div><div className="text-xs text-cream/50 mt-1">Client Satisfaction</div></div>
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={12} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Monthly Installment</div></div>
-              <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={3} suffix={'\u00d7'} /></div><div className="text-xs text-cream/50 mt-1">Potential</div></div>
-            </div>
           </div>
           <div id="book-inspection" className="animate-fadeUp scroll-mt-24" style={{ animationDelay: '0.2s' }}>
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"><FormCard /></div>
+            <div className="flex gap-4 md:gap-6 mt-6 justify-center flex-wrap">
+              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={500} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Plot Sold</div></div>
+              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={95} suffix="%" /></div><div className="text-xs text-cream/50 mt-1">Client Satisfaction</div></div>
+              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={12} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Monthly Installment</div></div>
+              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={3} suffix={'\u00d7'} /></div><div className="text-xs text-cream/50 mt-1">Potential</div></div>
+            </div>
           </div>
         </div>
       </section>
