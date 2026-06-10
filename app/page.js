@@ -178,21 +178,13 @@ export default function Home() {
               <span className="w-2 h-2 bg-gold rounded-full animate-pulse"></span>
               Trusted Real Estate Consultant
             </div>
-            <h1 className="font-display font-black text-5xl md:text-7xl leading-tight text-cream mb-6">
+            <h1 className="font-display font-black text-4xl md:text-7xl leading-tight text-cream mb-8">
               Build Wealth Through<br /><span className="text-gold">Strategic Real Estate</span><br />Investment
             </h1>
-            <p className="text-cream/60 text-base leading-relaxed max-w-lg mb-8">
+            <p className="text-cream/60 text-sm md:text-base leading-relaxed max-w-lg mb-10">
               Own a verified land in a rapidly developing corridor with flexible payment plans and exceptional appreciation potential.
             </p>
-            <div className="flex flex-wrap gap-6">
-              <a href="#book-inspection" className="bg-gold text-navy px-8 py-3 rounded-full font-bold text-sm hover:bg-gold-light transition-all flex items-center gap-2 group animate-pulseGlow">
-                Book for Inspection <span className="text-lg inline-block group-hover:translate-x-1 transition-transform">&rarr;</span>
-              </a>
-              <a href="#services" className="border border-cream/20 text-cream px-8 py-3 rounded-full font-medium text-sm hover:bg-cream/10 transition-all">
-                Explore Services
-              </a>
-            </div>
-            <div className="flex gap-8 mt-12">
+            <div className="flex gap-8 mt-10">
               <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={50} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Properties Sold</div></div>
               <div><div className="font-display font-black text-3xl text-gold"><AnimatedCounter target={200} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Happy Clients</div></div>
               <div><div className="font-display font-black text-3xl text-gold">4.9</div><div className="text-xs text-cream/50 mt-1">Client Rating</div></div>
