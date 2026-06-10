@@ -204,7 +204,7 @@ export default function Home() {
               <div><div className="font-display font-black text-3xl text-gold">4.9</div><div className="text-xs text-cream/50 mt-1">Client Rating</div></div>
             </div>
           </div>
-          <div id="book-inspection" className="animate-fadeUp" style={{ animationDelay: '0.2s' }}>
+          <div id="book-inspection" className="animate-fadeUp scroll-mt-24" style={{ animationDelay: '0.2s' }}>
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"><FormCard /></div>
           </div>
         </div>
