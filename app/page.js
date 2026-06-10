@@ -166,9 +166,7 @@ export default function Home() {
           <a href="#" className="font-display font-black text-xl tracking-tight text-cream">
             MrMultipreneur<span className="text-gold">.</span>
           </a>
-          <div className="flex items-center gap-6">
-            <a href="#services" className="text-cream/70 text-sm hover:text-gold transition-colors">Services</a>
-            <a href="#about" className="text-cream/70 text-sm hover:text-gold transition-colors">About</a>
+          <div>
             <a href="#book-inspection" className="bg-gold text-navy px-5 py-2 rounded-full text-sm font-bold hover:bg-gold-light transition-all">Book for Inspection</a>
           </div>
         </div>
