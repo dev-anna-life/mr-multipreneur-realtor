@@ -293,7 +293,7 @@ export default function Home() {
         </section>
       </Reveal>
 
-      <footer className="bg-gradient-to-r from-navy via-navy/90 to-charcoal">
+      <footer className="bg-navy border-t border-gold/10">
         <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8">
             <a href="tel:+2347048322531" className="flex items-center gap-3 group">
