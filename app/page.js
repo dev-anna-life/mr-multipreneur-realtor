@@ -284,7 +284,7 @@ export default function Home() {
             <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Still Have Doubts?</p>
             <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight mb-6">Book Your Free Site Inspection</h2>
             <p className="text-cream/60 text-base leading-relaxed max-w-2xl mx-auto mb-10">
-              We understand that buying land is a big decision. That's why we invite you to visit the property in person, verify every document, and see the development for yourself. No pressure, no rush — just the facts so you can make an informed choice.
+              We understand that buying land is a big decision. That's why we invite you to visit the property in person, verify every document, and see the development for yourself. No pressure, no rush, just the facts so you can make an informed choice.
             </p>
             <a href="#book-inspection" className="inline-block bg-gold text-navy px-10 py-4 rounded-full font-bold text-base hover:bg-gold-light transition-all">
               Reserve Inspection Slot
