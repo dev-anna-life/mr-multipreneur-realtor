@@ -63,12 +63,11 @@ function FormCard() {
     e.preventDefault()
     if (!consent) return
     setSending(true)
-    const data = {
-      name: e.target.fullName.value,
-      email: e.target.email.value,
-      phone: e.target.phone.value,
-      source: 'Contact Form',
-    }
+    const name = e.target.fullName.value
+    const phone = e.target.phone.value
+    const email = e.target.email.value
+    const budget = e.target.budget.value
+    const data = { name, email, phone, budget, source: 'Contact Form' }
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -79,6 +78,8 @@ function FormCard() {
       e.target.reset()
       setConsent(false)
       try { fbq('track', 'Lead'); } catch(e) {}
+      const msg = encodeURIComponent(`Hello Harrison, I'm interested in investing.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBudget: ${budget}`)
+      window.open(`https://wa.me/2347048322531?text=${msg}`, '_blank')
       setTimeout(() => setSubmitted(false), 5000)
     } catch {
       alert('Something went wrong. Please try again.')
