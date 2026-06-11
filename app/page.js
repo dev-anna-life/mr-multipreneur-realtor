@@ -135,25 +135,19 @@ function FormCard() {
   )
 }
 
-const services = [
-  { icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6', title: 'Buying a Home', desc: 'Find your perfect property with personalized guidance through every step of the purchasing process.' },
-  { icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4', title: 'Selling Properties', desc: 'Maximize your property value with strategic pricing, staging, and targeted marketing campaigns.' },
-  { icon: 'M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z', title: 'Rental Services', desc: 'Reliable rental solutions for landlords and tenants, from listings to lease agreements.' },
-  { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Real Estate Investment', desc: 'Data driven investment advice to help you build wealth through strategic property acquisitions.' },
-  { icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z', title: 'Property Development', desc: 'End to end support for development projects, from land acquisition to completed structures.' },
-  { icon: 'M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z', title: 'Consultation', desc: 'One on one expert advice on market trends, property valuation, and investment strategy.' },
+const features = [
+  { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Verified Documentation', desc: 'Every plot comes with full legal backing and authenticated survey plans for complete peace of mind.' },
+  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Location Advantage', desc: 'Situated in a rapidly developing corridor with proven appreciation and growing infrastructure.' },
+  { icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z', title: 'Affordable Payment', desc: 'Flexible installment plans designed to make land ownership accessible without financial strain.' },
+  { icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z', title: 'Infrastructure Quality', desc: 'Well planned roads, drainage, and utility access already mapped out across the estate.' },
+  { icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0zM2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z', title: 'Instant Allocation', desc: 'Same day plot allocation once payment is confirmed. No unnecessary delays or bureaucracy.' },
+  { icon: 'M13 7h8m0 0v8m0-8l-8 8-4-4-6 6', title: 'Long Term Return', desc: 'High growth corridor with proven year on year appreciation for maximum investment yield.' },
 ]
 
-const testimonials = [
-  { text: '"Harrison helped me find my first home and made the entire process stress free. Highly recommended!"', name: 'Chioma A.', role: 'First time Buyer' },
-  { text: '"Sold my property in record time thanks to his marketing strategy. Professional and results driven."', name: 'Emeka O.', role: 'Property Seller' },
-  { text: '"The best real estate agent I have worked with. Honest, knowledgeable, and truly cares about his clients."', name: 'Amara N.', role: 'Investor' },
-]
-
-const aboutItems = [
-  { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', text: 'Trusted track record of successful transactions' },
-  { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', text: 'Deep knowledge of local neighborhoods and market trends' },
-  { icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', text: 'Personalized service from start to closing' },
+const investmentPlans = [
+  { size: '300sqm', label: 'Entry Level', price: '₦2.5M', tag: null, features: ['Perfect for first time investors', 'Flexible 12 month payment plan', 'Verified C of O documentation', 'Great resale value potential'] },
+  { size: '500sqm', label: 'Most Popular', price: '₦4.0M', tag: 'Best Value', features: ['Ideal for family home construction', 'Premium location within estate', 'Flexible 18 month payment plan', 'Highest appreciation rate'] },
+  { size: '1000sqm', label: 'Premium', price: '₦7.5M', tag: 'Wealth Builder', features: ['Double plot for maximum returns', 'Corner plot premium positioning', 'Flexible 24 month payment plan', 'Best long term investment value'] },
 ]
 
 export default function Home() {
@@ -209,22 +203,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* SERVICES */}
+      {/* WHY THIS ESTATE */}
       <Reveal>
-        <section id="services" className="py-24 px-6 md:px-12 bg-cream">
+        <section id="why-this-estate" className="py-24 px-6 md:px-12 bg-cream">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">What I Offer</p>
-              <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Expert Real Estate Services</h2>
+              <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Why This Estate</p>
+              <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Built for Smart Investors</h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {services.map((s, i) => (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((f, i) => (
                 <div key={i} className="bg-white rounded-2xl p-8 border border-gray-100 hover:-translate-y-2 hover:shadow-xl transition-all duration-300 group">
                   <div className="w-16 h-16 bg-gold/10 rounded-xl flex items-center justify-center text-gold text-2xl mb-5 group-hover:bg-gold group-hover:text-cream transition-all duration-300">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={s.icon} /></svg>
+                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={f.icon} /></svg>
                   </div>
-                  <h3 className="font-display font-bold text-lg text-navy mb-3">{s.title}</h3>
-                  <p className="text-slate text-base leading-relaxed">{s.desc}</p>
+                  <h3 className="font-display font-bold text-lg text-navy mb-3">{f.title}</h3>
+                  <p className="text-slate text-base leading-relaxed">{f.desc}</p>
                 </div>
               ))}
             </div>
@@ -232,99 +226,62 @@ export default function Home() {
         </section>
       </Reveal>
 
-      {/* WHY CHOOSE */}
+      {/* INVESTMENT OPTIONS */}
       <Reveal>
-        <section id="about" className="py-12 md:py-24 px-6 md:px-12 bg-white">
-          <div className="max-w-7xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-6 md:gap-12 md:items-center">
-            <div className="animate-float order-2 md:order-none">
-              <div className="w-full max-w-sm mx-auto md:max-w-none aspect-[4/5] md:aspect-[3/4] bg-navy rounded-3xl flex items-center justify-center overflow-hidden shadow-xl">
-                <img src="/assets/harrison-profile.jpeg" alt="Harrison Ugochukwu" className="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" />
-              </div>
+        <section id="investment-options" className="py-24 px-6 md:px-12 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Investment Options</p>
+              <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Choose Your Plot Size</h2>
             </div>
-            <div className="order-1 md:order-none space-y-3">
-              <div>
-                <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Why Choose Me</p>
-                <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-3">Harrison Ugochukwu</h2>
-                <p className="text-slate leading-relaxed">
-                  With years of hands on experience in the Nigerian real estate market, I bring local expertise, market insight, and a genuine commitment to helping you find the right property. Whether you're buying your first home, selling a property, or looking to invest, I'm here to make the process smooth and successful.
-                </p>
-              </div>
-              <div className="space-y-4">
-                {aboutItems.map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={item.icon} /></svg>
-                    <span className="text-base text-slate">{item.text}</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto items-start">
+              {investmentPlans.map((plan, i) => (
+                <div key={i} className={`relative rounded-2xl p-8 border-2 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${i === 1 ? 'border-gold bg-gold/5 scale-105 md:scale-110' : 'border-gray-100 bg-white'}`}>
+                  {plan.tag && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-navy px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+                      {plan.tag}
+                    </div>
+                  )}
+                  <div className="text-center mb-6">
+                    <div className="text-3xl font-display font-black text-navy">{plan.size}</div>
+                    <div className="text-sm text-slate mt-1">{plan.label}</div>
                   </div>
-                ))}
-              </div>
+                  <div className="text-center mb-6">
+                    <span className="text-4xl font-display font-black text-gold">{plan.price}</span>
+                  </div>
+                  <ul className="space-y-3 mb-8">
+                    {plan.features.map((feat, j) => (
+                      <li key={j} className="flex items-start gap-2 text-sm text-slate">
+                        <svg className="w-5 h-5 text-gold flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" /></svg>
+                        {feat}
+                      </li>
+                    ))}
+                  </ul>
+                  <a href="#book-inspection" className={`block text-center py-3 rounded-xl font-bold text-sm transition-all w-full ${i === 1 ? 'bg-gold text-navy hover:bg-gold-light' : 'bg-navy text-cream hover:bg-charcoal'}`}>
+                    Select Plan
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       </Reveal>
 
-      {/* TESTIMONIALS */}
-      <section className="py-24 px-6 md:px-12 bg-navy">
-        <div className="max-w-7xl mx-auto">
-          <Reveal>
-            <div className="text-center mb-16">
-              <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Testimonials</p>
-              <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight">What My Clients Say</h2>
-            </div>
-          </Reveal>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="opacity-0 translate-y-8" style={{ animation: `fadeUp 0.7s ease ${i * 0.2}s forwards` }}>
-                <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 h-full hover:-translate-y-1 hover:border-gold/30 transition-all duration-500">
-                  <div className="text-gold text-lg mb-5">{'\u2605\u2605\u2605\u2605\u2605'}</div>
-                  <p className="text-cream/80 text-base leading-relaxed mb-6 italic">&ldquo;{t.text.replace(/^"|"$/g, '')}&rdquo;</p>
-                  <div><div className="font-semibold text-cream text-base">{t.name}</div><div className="text-cream/40 text-sm mt-0.5">{t.role}</div></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CONTACT */}
+      {/* BOOK YOUR FREE SITE INSPECTION */}
       <Reveal>
-        <section id="contact" className="py-24 px-6 md:px-12 bg-cream">
-          <div className="max-w-4xl mx-auto text-center">
-            <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Get in Touch</p>
-            <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight mb-6">Let's Find Your Perfect Property</h2>
-            <p className="text-slate text-base max-w-lg mx-auto mb-12">Ready to take the next step? Reach out and I'll get back to you within 24 hours.</p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <a href="tel:+2347048322531" className="bg-white rounded-2xl p-6 border border-gray-100 block hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-cream transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                </div>
-                <p className="text-base font-semibold text-navy">Phone</p>
-                <p className="text-sm text-slate mt-1">+234 7048322531</p>
-              </a>
-              <a href="mailto:Eponixlimited@gmail.com" className="bg-white rounded-2xl p-6 border border-gray-100 block hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-cream transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
-                </div>
-                <p className="text-base font-semibold text-navy">Email</p>
-                <p className="text-sm text-slate mt-1">Eponixlimited@gmail.com</p>
-              </a>
-              <a href="https://maps.google.com/maps/search/Old%20Anwai%20Rd%2C%20Asaba%2C%20Delta%2C%20Nigeria/@6.2264,6.7034,17z?hl=en" target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 border border-gray-100 block hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-cream transition-all duration-300">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
-                </div>
-                <p className="text-base font-semibold text-navy">Location</p>
-                <p className="text-sm text-slate mt-1">Old Anwai Rd, Asaba, Delta</p>
-              </a>
-              <a href="https://wa.me/2347048322531?text=Hello%20Harrison%2C%20I'd%20like%20to%20book%20a%20property%20inspection." target="_blank" rel="noopener noreferrer" onClick={() => { try { fbq('track', 'Contact'); } catch(e) {} }} className="bg-white rounded-2xl p-6 border border-gray-100 block hover:shadow-md transition-shadow group">
-                <div className="w-10 h-10 bg-gold/10 rounded-full flex items-center justify-center text-gold mx-auto mb-4 group-hover:bg-gold group-hover:text-cream transition-all duration-300">
-                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                </div>
-                <p className="text-base font-semibold text-navy">WhatsApp</p>
-                <p className="text-sm text-slate mt-1">Chat Instantly</p>
-              </a>
-            </div>
-            <div className="max-w-lg mx-auto bg-white rounded-3xl p-8 shadow-sm border border-gray-100">
-              <FormCard />
-            </div>
+        <section className="py-24 px-6 md:px-12 bg-navy relative overflow-hidden">
+          <div className="absolute inset-0 opacity-[0.04]">
+            <div className="absolute top-1/3 left-1/3 w-96 h-96 bg-gold rounded-full blur-[120px]" />
+          </div>
+          <div className="max-w-3xl mx-auto text-center relative z-10">
+            <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Still Have Doubts?</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-cream leading-tight mb-6">Book Your Free Site Inspection</h2>
+            <p className="text-cream/60 text-base leading-relaxed max-w-2xl mx-auto mb-10">
+              We understand that buying land is a big decision. That's why we invite you to visit the property in person, verify every document, and see the development for yourself. No pressure, no rush — just the facts so you can make an informed choice.
+            </p>
+            <a href="#book-inspection" className="inline-block bg-gold text-navy px-10 py-4 rounded-full font-bold text-base hover:bg-gold-light transition-all">
+              Reserve Inspection Slot
+            </a>
           </div>
         </section>
       </Reveal>

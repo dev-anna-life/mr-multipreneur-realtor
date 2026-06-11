@@ -6,9 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: '#171738',
-        gold: '#8EF9F3',
-        'gold-light': '#b0f7f2',
+        navy: '#1E4E9B',
+        gold: '#8BC53F',
+        'gold-light': '#a0d85c',
         cream: '#f8f9fc',
         charcoal: '#0d0d24',
         slate: '#6b7280',

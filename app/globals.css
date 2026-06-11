@@ -15,8 +15,8 @@ html { scroll-behavior: smooth; }
 }
 
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(142, 249, 243, 0.3); }
-  50% { box-shadow: 0 0 0 12px rgba(142, 249, 243, 0); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(139, 197, 63, 0.3); }
+  50% { box-shadow: 0 0 0 12px rgba(139, 197, 63, 0); }
 }
 
 @keyframes fadeInScale {
