@@ -193,12 +193,18 @@ export default function Home() {
           </div>
           <div id="book-inspection" className="animate-fadeUp scroll-mt-24" style={{ animationDelay: '0.2s' }}>
             <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl"><FormCard /></div>
-            <div className="flex gap-4 md:gap-6 mt-6 justify-center flex-wrap">
-              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={500} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Plot Sold</div></div>
-              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={95} suffix="%" /></div><div className="text-xs text-cream/50 mt-1">Client Satisfaction</div></div>
-              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={12} suffix="+" /></div><div className="text-xs text-cream/50 mt-1">Monthly Installment</div></div>
-              <div className="text-center"><div className="font-display font-black text-2xl md:text-3xl text-gold"><AnimatedCounter target={3} suffix={'\u00d7'} /></div><div className="text-xs text-cream/50 mt-1">Potential</div></div>
-            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* METRICS STRIP */}
+      <section className="py-10 md:py-14 px-6 md:px-12 bg-navy border-y border-gold/10">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex gap-6 md:gap-12 justify-center flex-wrap">
+            <div className="text-center"><div className="font-display font-black text-3xl md:text-4xl text-gold"><AnimatedCounter target={500} suffix="+" /></div><div className="text-xs text-cream/50 mt-1 uppercase tracking-wider">Plot Sold</div></div>
+            <div className="text-center"><div className="font-display font-black text-3xl md:text-4xl text-gold"><AnimatedCounter target={98} suffix="%" /></div><div className="text-xs text-cream/50 mt-1 uppercase tracking-wider">Customer Satisfaction</div></div>
+            <div className="text-center"><div className="font-display font-black text-3xl md:text-4xl text-gold"><AnimatedCounter target={12} suffix="+" /></div><div className="text-xs text-cream/50 mt-1 uppercase tracking-wider">Payment Plan</div></div>
+            <div className="text-center"><div className="font-display font-black text-3xl md:text-4xl text-gold"><AnimatedCounter target={3} suffix={'\u00d7'} /></div><div className="text-xs text-cream/50 mt-1 uppercase tracking-wider">Appreciation</div></div>
           </div>
         </div>
       </section>
