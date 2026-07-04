@@ -152,7 +152,7 @@ function FormCard() {
       <div>
         <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Select a Budget <span className="text-red-500">*</span></label>
         <select name="budget" required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white">
-          <option value="">Select a Budget</option>
+          <option value="" disabled>Select a Budget</option>
           <option value="Under ₦2M">Under ₦2M</option>
           <option value="₦2M - ₦5M">₦2M - ₦5M</option>
           <option value="₦5M - ₦10M">₦5M - ₦10M</option>
@@ -166,6 +166,7 @@ function FormCard() {
           What exactly are you buying? <span className="text-red-500">*</span>
         </label>
         <select value={purpose} onChange={e => setPurpose(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
+          <option value="" disabled>Select an option</option>
           <option value="Personal Use">Personal Use</option>
           <option value="Investment / Capital Growth">Investment / Capital Growth</option>
           <option value="Land Banking">Land Banking</option>
@@ -176,6 +177,7 @@ function FormCard() {
           Have you bought land before and How soon are you ready to commit? <span className="text-red-500">*</span>
         </label>
         <select value={commitment} onChange={e => setCommitment(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
+          <option value="" disabled>Select an option</option>
           <option value="Yes, immediately">Yes, immediately</option>
           <option value="Yes, within 1 month">Yes, within 1 month</option>
           <option value="No, immediately">No, immediately</option>
