@@ -92,13 +92,11 @@ function AnimatedCounter({ target, suffix = '', decimals = 0 }) {
 function FormCard() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
-  const [consent, setConsent] = useState(false)
   const [purpose, setPurpose] = useState('')
   const [commitment, setCommitment] = useState('')
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (!consent) return
     setSending(true)
     const name = e.target.fullName.value
     const phone = e.target.phone.value
@@ -113,7 +111,6 @@ function FormCard() {
       })
       setSubmitted(true)
       e.target.reset()
-      setConsent(false)
       try { fbq('track', 'Lead'); } catch(e) {}
       const msg = encodeURIComponent(`Hello Harrison, I'm interested in investing.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBudget: ${budget}\nPurpose: ${purpose}\nCommitment: ${commitment}`)
       window.open(`https://wa.me/2347048322531?text=${msg}`, '_blank')
@@ -184,11 +181,7 @@ function FormCard() {
           <option value="No, within 1 month">No, within 1 month</option>
         </select>
       </div>
-      <label className="flex items-start gap-3 cursor-pointer">
-        <input type="checkbox" checked={consent} onChange={e => setConsent(e.target.checked)} className="mt-0.5 w-4 h-4 rounded border-gray-300 text-gold accent-gold" />
-        <span className="text-sm text-slate leading-relaxed">I consent to having information processed in order to receive personalised marketing material via email in accordance with the Privacy Policy.</span>
-      </label>
-      <button type="submit" disabled={sending || !consent} className="bg-navy text-white py-3.5 rounded-xl font-bold text-sm hover:bg-navy/90 transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
+      <button type="submit" disabled={sending} className="bg-navy text-white py-3.5 rounded-xl font-bold text-sm hover:bg-navy/90 transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
         {sending ? 'Sending...' : 'Book Inspection Now'}
       </button>
       <p className="text-sm text-slate/50 text-center mt-2">Your information is 100% safe. We never share your data.</p>
