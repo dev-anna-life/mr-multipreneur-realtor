@@ -311,7 +311,7 @@ export default function Home() {
           <div className="relative">
             <div className="flex gap-10 animate-marquee" style={{ width: 'max-content' }}>
               {[...estateFeatures, ...estateFeatures].map((f, i) => (
-                <div key={i} className="flex-shrink-0 min-w-[355px] bg-white rounded-[15px] p-[30px] shadow-lg text-center">
+                <div key={i} className="flex-shrink-0 min-w-[355px] bg-white rounded-[15px] p-[30px] shadow-lg text-center group">
                   <div className="w-[300px] h-16 mx-auto border border-gray-200 rounded-[10px] flex items-center justify-center text-gold icon-glow">
                     <svg className="w-[30px] h-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
                   </div>
@@ -322,43 +322,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* YOUR INVESTMENT PREFERENCES */}
-      <Reveal>
-        <section id="investment-preferences" className="py-24 px-6 md:px-12 bg-white">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Your Preferences</p>
-              <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Tell Us What You Need</h2>
-            </div>
-            <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-lg space-y-8">
-              <div>
-                <label className="text-sm font-bold text-navy uppercase tracking-wide mb-3 block">
-                  What exactly are buying? <span className="text-red-500">*</span>
-                </label>
-                <select className="w-full px-5 py-4 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
-                  <option value="">Select an option</option>
-                  <option value="Personal Use">Personal Use</option>
-                  <option value="Investment / Capital Growth">Investment / Capital Growth</option>
-                  <option value="Land Banking">Land Banking</option>
-                </select>
-              </div>
-              <div>
-                <label className="text-sm font-bold text-navy uppercase tracking-wide mb-3 block">
-                  Have you bought land before and How soon are you ready to commit? <span className="text-red-500">*</span>
-                </label>
-                <select className="w-full px-5 py-4 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
-                  <option value="">Select an option</option>
-                  <option value="Yes, immediately">Yes, immediately</option>
-                  <option value="Yes, within 1 month">Yes, within 1 month</option>
-                  <option value="No, immediately">No, immediately</option>
-                  <option value="No, within 1 month">No, within 1 month</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </section>
-      </Reveal>
 
       {/* BOOK YOUR FREE SITE INSPECTION */}
       <Reveal>

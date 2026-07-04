@@ -33,8 +33,9 @@ html { scroll-behavior: smooth; }
   animation: marquee 40s linear infinite;
 }
 
-.icon-glow svg {
-  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
+.group:hover .icon-glow svg {
+  filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.6));
+  transition: filter 0.3s ease;
 }
 
 .animate-fadeUp { animation: fadeUp 0.7s ease both; }
