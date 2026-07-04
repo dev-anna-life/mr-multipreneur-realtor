@@ -308,12 +308,12 @@ export default function Home() {
             <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Estate Features</p>
             <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Smart infrastructure meets luxury, security and elegance in all our developments.</h2>
           </div>
-          <div className="relative">
+          <div className="relative marquee-track">
             <div className="flex gap-10 animate-marquee" style={{ width: 'max-content' }}>
               {[...estateFeatures, ...estateFeatures].map((f, i) => (
                 <div key={i} className="flex-shrink-0 min-w-[355px] bg-white rounded-[15px] p-[30px] shadow-lg text-center group">
-                  <div className="w-[300px] h-16 mx-auto border border-gray-200 rounded-[10px] flex items-center justify-center text-gold icon-glow">
-                    <svg className="w-[30px] h-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
+                  <div className="w-[300px] h-[72px] mx-auto border border-gray-300 rounded-[10px] flex items-center justify-center text-gold icon-glow">
+                    <svg className="w-[40px] h-[40px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
                   </div>
                   <p className="font-display font-bold text-base text-navy mt-5">{f.label}</p>
                 </div>

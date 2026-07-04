@@ -33,6 +33,10 @@ html { scroll-behavior: smooth; }
   animation: marquee 40s linear infinite;
 }
 
+.marquee-track:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
 .icon-glow svg {
   filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.4));
   transition: filter 0.3s ease, transform 0.3s ease;
