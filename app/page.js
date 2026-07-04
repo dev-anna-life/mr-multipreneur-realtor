@@ -309,13 +309,13 @@ export default function Home() {
             <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Smart infrastructure meets luxury, security and elegance in all our developments.</h2>
           </div>
           <div className="relative">
-            <div className="flex gap-6 animate-marquee" style={{ width: 'max-content' }}>
+            <div className="flex gap-10 animate-marquee" style={{ width: 'max-content' }}>
               {[...estateFeatures, ...estateFeatures].map((f, i) => (
-                <div key={i} className="flex-shrink-0 w-44 md:w-52 bg-white rounded-2xl p-6 border border-gray-100 shadow-md text-center hover:shadow-lg transition-shadow">
-                  <div className="w-14 h-14 mx-auto bg-gold/10 rounded-xl flex items-center justify-center text-gold mb-4">
-                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
+                <div key={i} className="flex-shrink-0 min-w-[355px] bg-white rounded-[15px] p-[30px] shadow-lg text-center">
+                  <div className="w-[300px] h-16 mx-auto border border-gray-200 rounded-[10px] flex items-center justify-center text-gold icon-glow">
+                    <svg className="w-[30px] h-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
                   </div>
-                  <p className="font-display font-bold text-sm text-navy">{f.label}</p>
+                  <p className="font-display font-bold text-sm text-navy mt-5">{f.label}</p>
                 </div>
               ))}
             </div>

@@ -30,7 +30,11 @@ html { scroll-behavior: smooth; }
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
+  animation: marquee 40s linear infinite;
+}
+
+.icon-glow svg {
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.5));
 }
 
 .animate-fadeUp { animation: fadeUp 0.7s ease both; }
