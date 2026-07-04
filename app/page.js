@@ -196,6 +196,20 @@ function FormCard() {
   )
 }
 
+const estateFeatures = [
+  { label: 'Smart Home Systems', icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+  { label: 'Water Management', icon: 'M13 2.5L7 12h10l-6 9.5M7 12l-5 7.5M17 12l5 7.5' },
+  { label: 'Central Power', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { label: 'Gated Access', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
+  { label: 'Paved Roads', icon: 'M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7' },
+  { label: '24/7 Security', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+  { label: 'Landscaping', icon: 'M3 12l9-9 9 9M5 10v10a1 1 0 001 1h3m10-11v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6' },
+  { label: 'Recreational Areas', icon: 'M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { label: 'Estate Management', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z M15 12a3 3 0 11-6 0 3 3 0 016 0z' },
+  { label: 'Street Lighting', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+  { label: 'CCTV Monitoring', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' },
+]
+
 const features = [
   { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', title: 'Verified Documentation', desc: 'Every plot comes with full legal backing and authenticated survey plans for complete peace of mind.' },
   { icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0zM15 11a3 3 0 11-6 0 3 3 0 016 0z', title: 'Location Advantage', desc: 'Situated in a rapidly developing corridor with proven appreciation and growing infrastructure.' },
@@ -286,6 +300,28 @@ export default function Home() {
           </div>
         </section>
       </Reveal>
+
+      {/* ESTATE FEATURES MARQUEE */}
+      <section className="py-24 px-6 md:px-12 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-gold text-sm font-bold uppercase tracking-widest mb-3">Estate Features</p>
+            <h2 className="font-display font-black text-4xl md:text-5xl text-navy leading-tight">Smart infrastructure meets luxury, security and elegance in all our developments.</h2>
+          </div>
+          <div className="relative">
+            <div className="flex gap-6 animate-marquee" style={{ width: 'max-content' }}>
+              {[...estateFeatures, ...estateFeatures].map((f, i) => (
+                <div key={i} className="flex-shrink-0 w-44 md:w-52 bg-white rounded-2xl p-6 border border-gray-100 shadow-md text-center hover:shadow-lg transition-shadow">
+                  <div className="w-14 h-14 mx-auto bg-gold/10 rounded-xl flex items-center justify-center text-gold mb-4">
+                    <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
+                  </div>
+                  <p className="font-display font-bold text-sm text-navy">{f.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* YOUR INVESTMENT PREFERENCES */}
       <Reveal>
