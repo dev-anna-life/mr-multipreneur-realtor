@@ -93,6 +93,8 @@ function FormCard() {
   const [submitted, setSubmitted] = useState(false)
   const [sending, setSending] = useState(false)
   const [consent, setConsent] = useState(false)
+  const [purpose, setPurpose] = useState('')
+  const [commitment, setCommitment] = useState('')
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -102,7 +104,7 @@ function FormCard() {
     const phone = e.target.phone.value
     const email = e.target.email.value
     const budget = e.target.budget.value
-    const data = { name, email, phone, budget, source: 'Contact Form' }
+    const data = { name, email, phone, budget, purpose, commitment, source: 'Contact Form' }
     try {
       await fetch('/api/contact', {
         method: 'POST',
@@ -113,7 +115,7 @@ function FormCard() {
       e.target.reset()
       setConsent(false)
       try { fbq('track', 'Lead'); } catch(e) {}
-      const msg = encodeURIComponent(`Hello Harrison, I'm interested in investing.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBudget: ${budget}`)
+      const msg = encodeURIComponent(`Hello Harrison, I'm interested in investing.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}\nBudget: ${budget}\nPurpose: ${purpose}\nCommitment: ${commitment}`)
       window.open(`https://wa.me/2347048322531?text=${msg}`, '_blank')
       setTimeout(() => setSubmitted(false), 5000)
     } catch {
@@ -157,6 +159,29 @@ function FormCard() {
           <option value="₦10M - ₦20M">₦10M - ₦20M</option>
           <option value="₦20M - ₦50M">₦20M - ₦50M</option>
           <option value="₦50M+">₦50M+</option>
+        </select>
+      </div>
+      <div>
+        <label className="text-sm font-bold text-navy uppercase tracking-wide mb-1.5 block">
+          What exactly are you buying? <span className="text-red-500">*</span>
+        </label>
+        <select value={purpose} onChange={e => setPurpose(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
+          <option value="">Select an option</option>
+          <option value="Personal Use">Personal Use</option>
+          <option value="Investment / Capital Growth">Investment / Capital Growth</option>
+          <option value="Land Banking">Land Banking</option>
+        </select>
+      </div>
+      <div>
+        <label className="text-sm font-bold text-navy uppercase tracking-wide mb-1.5 block">
+          Have you bought land before and How soon are you ready to commit? <span className="text-red-500">*</span>
+        </label>
+        <select value={commitment} onChange={e => setCommitment(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
+          <option value="">Select an option</option>
+          <option value="Yes, immediately">Yes, immediately</option>
+          <option value="Yes, within 1 month">Yes, within 1 month</option>
+          <option value="No, immediately">No, immediately</option>
+          <option value="No, within 1 month">No, within 1 month</option>
         </select>
       </div>
       <label className="flex items-start gap-3 cursor-pointer">
@@ -320,18 +345,12 @@ export default function Home() {
 
       <footer className="bg-gradient-to-r from-navy via-navy/90 to-navy backdrop-blur-md border-t border-gold/10">
         <div className="max-w-7xl mx-auto px-6 py-8 md:py-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
             <a href="tel:+2347048322531" className="flex items-center gap-2 md:gap-3 group">
               <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-navy transition-all duration-300 shrink-0">
                 <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
               </div>
               <div className="min-w-0"><div className="text-[10px] md:text-xs text-white/40 uppercase tracking-wider">Phone</div><div className="text-xs md:text-sm font-semibold text-white/90 group-hover:text-gold transition-colors break-all">+234 7048322531</div></div>
-            </a>
-            <a href="mailto:Eponixlimited@gmail.com" className="flex items-center gap-2 md:gap-3 group">
-              <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gold/10 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-navy transition-all duration-300 shrink-0">
-                <svg className="w-3.5 h-3.5 md:w-4 md:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              </div>
-              <div className="min-w-0"><div className="text-[10px] md:text-xs text-white/40 uppercase tracking-wider">Email</div><div className="text-xs md:text-sm font-semibold text-white/90 group-hover:text-gold transition-colors break-all">Eponixlimited@gmail.com</div></div>
             </a>
             <div className="flex items-center gap-2 md:gap-3">
               <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-gold/10 flex items-center justify-center text-gold shrink-0">
