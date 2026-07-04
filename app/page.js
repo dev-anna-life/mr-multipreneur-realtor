@@ -315,7 +315,7 @@ export default function Home() {
                   <div className="w-[300px] h-16 mx-auto border border-gray-200 rounded-[10px] flex items-center justify-center text-gold icon-glow">
                     <svg className="w-[30px] h-[30px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d={f.icon} /></svg>
                   </div>
-                  <p className="font-display font-bold text-sm text-navy mt-5">{f.label}</p>
+                  <p className="font-display font-bold text-base text-navy mt-5">{f.label}</p>
                 </div>
               ))}
             </div>
