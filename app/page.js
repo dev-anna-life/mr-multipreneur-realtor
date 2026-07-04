@@ -138,19 +138,19 @@ function FormCard() {
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Full Name</label>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Full Name <span className="text-red-500">*</span></label>
         <input type="text" name="fullName" required placeholder="Full Name" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
       <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone Number</label>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Phone Number <span className="text-red-500">*</span></label>
         <input type="tel" name="phone" required placeholder="Phone Number" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
       <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email Address</label>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Email Address <span className="text-red-500">*</span></label>
         <input type="email" name="email" required placeholder="Email Address" className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy placeholder:text-gray-300" />
       </div>
       <div>
-        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Select a Budget</label>
+        <label className="text-sm font-semibold text-navy uppercase tracking-wide mb-1.5 block">Select a Budget <span className="text-red-500">*</span></label>
         <select name="budget" required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white">
           <option value="">Select a Budget</option>
           <option value="Under ₦2M">Under ₦2M</option>
@@ -166,7 +166,6 @@ function FormCard() {
           What exactly are you buying? <span className="text-red-500">*</span>
         </label>
         <select value={purpose} onChange={e => setPurpose(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
-          <option value="">Select an option</option>
           <option value="Personal Use">Personal Use</option>
           <option value="Investment / Capital Growth">Investment / Capital Growth</option>
           <option value="Land Banking">Land Banking</option>
@@ -177,7 +176,6 @@ function FormCard() {
           Have you bought land before and How soon are you ready to commit? <span className="text-red-500">*</span>
         </label>
         <select value={commitment} onChange={e => setCommitment(e.target.value)} required className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm outline-none focus:border-gold transition-colors text-navy bg-white cursor-pointer">
-          <option value="">Select an option</option>
           <option value="Yes, immediately">Yes, immediately</option>
           <option value="Yes, within 1 month">Yes, within 1 month</option>
           <option value="No, immediately">No, immediately</option>
