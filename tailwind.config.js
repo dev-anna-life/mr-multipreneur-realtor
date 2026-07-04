@@ -6,12 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        navy: '#1E4E9B',
-        gold: '#8BC53F',
-        'gold-light': '#a0d85c',
-        cream: '#f8f9fc',
-        charcoal: '#0d0d24',
-        slate: '#6b7280',
+        navy: '#0F2040',
+        gold: '#D4AF37',
+        slate: '#64748B',
       },
       fontFamily: {
         display: ['"Playfair Display"', 'Georgia', 'serif'],
