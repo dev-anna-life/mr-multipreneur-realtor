@@ -189,7 +189,7 @@ function FormCard() {
         <span className="text-sm text-slate leading-relaxed">I consent to having information processed in order to receive personalised marketing material via email in accordance with the Privacy Policy.</span>
       </label>
       <button type="submit" disabled={sending || !consent} className="bg-navy text-white py-3.5 rounded-xl font-bold text-sm hover:bg-navy/90 transition-all mt-2 w-full cursor-pointer disabled:opacity-50">
-        {sending ? 'Sending...' : 'Get Instant Access'}
+        {sending ? 'Sending...' : 'Book Inspection Now'}
       </button>
       <p className="text-sm text-slate/50 text-center mt-2">Your information is 100% safe. We never share your data.</p>
     </form>
