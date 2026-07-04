@@ -1,7 +1,7 @@
 import nodemailer from 'nodemailer'
 
 export async function POST(request) {
-  const { name, email, phone, budget, message, source } = await request.json()
+  const { name, email, phone, budget, purpose, commitment, message, source } = await request.json()
 
   if (!name || !email || !phone) {
     return Response.json({ error: 'Name, email, and phone are required.' }, { status: 400 })
@@ -30,6 +30,8 @@ export async function POST(request) {
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Phone</td><td style="padding:8px;border:1px solid #ddd">${phone}</td></tr>
           <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Source</td><td style="padding:8px;border:1px solid #ddd">${source || 'Website'}</td></tr>
           ${budget ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Budget</td><td style="padding:8px;border:1px solid #ddd">${budget}</td></tr>` : ''}
+          ${purpose ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Purpose</td><td style="padding:8px;border:1px solid #ddd">${purpose}</td></tr>` : ''}
+          ${commitment ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold">Commitment</td><td style="padding:8px;border:1px solid #ddd">${commitment}</td></tr>` : ''}
           ${message ? `<tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;vertical-align:top">Message</td><td style="padding:8px;border:1px solid #ddd">${message}</td></tr>` : ''}
         </table>
         <p style="margin-top:16px;color:#666;font-size:13px">Sent from mr-multipreneur-realtor lead form.</p>
